@@ -1,4 +1,8 @@
-import { Application, Router, Context } from "./deps.ts";
+import {
+  Application,
+  Router,
+  Context,
+} from "https://deno.land/x/oak@v12.6.1/mod.ts";
 import { client } from "./db.ts";
 import { REQUEST_LIMIT } from "./secret.ts";
 

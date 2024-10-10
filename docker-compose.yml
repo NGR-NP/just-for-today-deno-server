@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: deno-container
+    image: deno-image
+    ports:
+      - "8000:8000" # Map port 8000 of the container to port 8000 on the host
+    environment:
+      DATABASE_URL: ${DATABASE_URL} # Use variable from the .env file
+      REQUEST_LIMIT: 5 # Default request limit, can be overridden in the .env file
+    volumes:
+      - .:/app # Mount the current directory to /app in the container for live changes
